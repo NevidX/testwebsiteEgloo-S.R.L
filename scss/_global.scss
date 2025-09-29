@@ -1,0 +1,153 @@
+// _global.scss
+
+/* Reset styles */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* Aeonik */
+@font-face {
+  font-family: 'Aeonik';
+  src: url('../fonts/Aeonik-Air.ttf') format('truetype');
+  font-weight: 100; /* можно считать как легкий */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Aeonik';
+  src: url('../fonts/Aeonik-Regular.ttf') format('truetype');
+  font-weight: 400; /* обычный */
+  font-style: normal;
+}
+
+/* MinervaModern */
+@font-face {
+  font-family: 'MinervaModern';
+  src: url('../fonts/MinervaModern-Black.ttf') format('truetype');
+  font-weight: 900; /* очень жирный */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MinervaModern';
+  src: url('../fonts/MinervaModern-BlackItalic.ttf') format('truetype');
+  font-weight: 900;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'MinervaModern';
+  src: url('../fonts/MinervaModern-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MinervaModern';
+  src: url('../fonts/MinervaModern-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'MinervaModern';
+  src: url('../fonts/MinervaModern-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+
+
+
+/* Remove default styles for links */
+a {
+  color: inherit;
+}
+
+/* Remove default styles for lists */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Set normal style for images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Remove default styles for tables */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 8px;
+}
+
+/* Set base fonts */
+body {
+  line-height: 1.6;
+  color: #333;
+  background-color: $globalBackGroundColour;
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Remove default spacing for forms */
+input,
+textarea,
+select {
+  border: 1px solid #ccc;
+  padding: 10px;
+  font-size: 16px;
+  width: 100%;
+  background-color: #fff;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+
+/* Button styles */
+button {
+  border: none;
+  cursor: pointer;
+}
+
+/* Remove default styles for blocks */
+section,
+article,
+aside,
+header,
+footer {
+  display: block;
+}
+
+.main__section{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+.container{
+    max-width: 1300px;
+    margin: auto;
+    padding: 5% 10px 5% 10px;
+}

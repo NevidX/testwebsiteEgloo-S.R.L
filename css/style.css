@@ -1,0 +1,526 @@
+@charset "UTF-8";
+/* Reset styles */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Aeonik */
+@font-face {
+  font-family: "Aeonik";
+  src: url("../fonts/Aeonik-Air.ttf") format("truetype");
+  font-weight: 100; /* можно считать как легкий */
+  font-style: normal;
+}
+@font-face {
+  font-family: "Aeonik";
+  src: url("../fonts/Aeonik-Regular.ttf") format("truetype");
+  font-weight: 400; /* обычный */
+  font-style: normal;
+}
+/* MinervaModern */
+@font-face {
+  font-family: "MinervaModern";
+  src: url("../fonts/MinervaModern-Black.ttf") format("truetype");
+  font-weight: 900; /* очень жирный */
+  font-style: normal;
+}
+@font-face {
+  font-family: "MinervaModern";
+  src: url("../fonts/MinervaModern-BlackItalic.ttf") format("truetype");
+  font-weight: 900;
+  font-style: italic;
+}
+@font-face {
+  font-family: "MinervaModern";
+  src: url("../fonts/MinervaModern-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "MinervaModern";
+  src: url("../fonts/MinervaModern-BoldItalic.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: "MinervaModern";
+  src: url("../fonts/MinervaModern-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+}
+/* Remove default styles for links */
+a {
+  color: inherit;
+}
+
+/* Remove default styles for lists */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Set normal style for images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Remove default styles for tables */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 8px;
+}
+
+/* Set base fonts */
+body {
+  line-height: 1.6;
+  color: #333;
+  background-color: #F4F3ED;
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Remove default spacing for forms */
+input,
+textarea,
+select {
+  border: 1px solid #ccc;
+  padding: 10px;
+  font-size: 16px;
+  width: 100%;
+  background-color: #fff;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+/* Button styles */
+button {
+  border: none;
+  cursor: pointer;
+}
+
+/* Remove default styles for blocks */
+section,
+article,
+aside,
+header,
+footer {
+  display: block;
+}
+
+.main__section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.container {
+  max-width: 1300px;
+  margin: auto;
+  padding: 5% 10px 5% 10px;
+}
+
+.main__title {
+  font-size: 64px;
+  font-family: "MinervaModern", serif;
+  font-weight: normal;
+  text-align: center;
+  margin-bottom: 10px;
+}
+@media (max-width: 879px) {
+  .main__title {
+    margin-top: 60px;
+    font-size: 44px;
+  }
+}
+@media (max-width: 581px) {
+  .main__title {
+    margin-top: 60px;
+    font-size: 25px;
+  }
+}
+
+.main__subtitle {
+  text-align: center;
+  font-family: "MinervaModern", serif;
+  font-size: 24px;
+  font-weight: bold;
+  color: #404040;
+}
+@media (max-width: 879px) {
+  .main__subtitle {
+    font-size: 16px;
+  }
+}
+@media (max-width: 581px) {
+  .main__subtitle {
+    font-size: 12px;
+  }
+}
+
+.main__products {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 60px;
+  gap: 60px 16px;
+}
+.main__products :last-child {
+  margin-right: 0px;
+}
+
+.products__card {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  flex: 0 1 calc(33.333% - 13.333px);
+  width: 422px;
+  height: 640px;
+}
+.products__card:last-child {
+  flex: 1 1 100%;
+  flex-direction: row;
+  height: 372px;
+}
+.products__card:last-child .card__image {
+  width: 880px;
+  max-height: 100%;
+  margin: 0;
+}
+@media (max-width: 581px) {
+  .products__card:last-child .card__image {
+    width: -moz-fit-content;
+    width: fit-content;
+    max-height: 100%;
+  }
+}
+.products__card:last-child .card__image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 8px 0 0 8px;
+}
+.products__card:last-child .card__info {
+  background-color: white;
+  flex: 0 0 424px;
+  padding: 20px;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+@media (max-width: 879px) {
+  .products__card {
+    flex: 1 1 40%;
+    max-width: 50%;
+  }
+  .products__card:last-child {
+    flex: 1 1 40%;
+    max-width: 100%;
+  }
+}
+@media (max-width: 581px) {
+  .products__card {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+  .products__card:last-child {
+    flex-direction: column;
+  }
+  .products__card .card__image {
+    width: 100%;
+    max-height: 100%;
+  }
+}
+
+.card__image {
+  background-color: black;
+  max-height: 250px;
+}
+
+.card__info {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 20px;
+}
+
+.card__timings {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 17px;
+  margin-bottom: 20px;
+}
+.card__timings-time {
+  margin-left: -10px;
+  font-family: "Aeonik", sans-serif;
+}
+
+.card__title {
+  display: block;
+  font-family: "MinervaModern", serif;
+  font-size: 24px;
+  border-bottom: 2px solid rgba(64, 64, 64, 0.337254902);
+  padding-bottom: 20px;
+  letter-spacing: -0.5px;
+}
+
+.card__description {
+  font-family: "Aeonik", sans-serif;
+  line-height: 1.5;
+  padding-top: 20px;
+}
+
+.card__price {
+  display: flex;
+  flex-direction: column;
+  margin-top: 14px;
+}
+.card__price-label {
+  font-family: "Aeonik", sans-serif;
+  color: rgba(102, 102, 102, 0.7607843137);
+  margin-bottom: 2px;
+}
+.card__price-row {
+  display: flex;
+  justify-content: space-between; /* цена слева, IVA справа */
+  align-items: center;
+}
+.card__price-iva {
+  background-color: #F6F6F6;
+  font-family: "Aeonik", sans-serif;
+  padding: 4px;
+  width: 102px;
+  height: 26px;
+  text-align: center;
+  color: black;
+  font-size: 14px;
+  line-height: 1;
+}
+.card__price-value {
+  font-family: "Aeonik", sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.card__details-button {
+  display: inline-flex;
+  align-items: center;
+  margin-top: auto;
+  text-align: left;
+  font-family: "MinervaModern", serif;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 15px 20px 15px 20px;
+  height: 47px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: white;
+  border: 2px solid black;
+}
+.header {
+  background-color: white;
+  padding: 15px 0;
+}
+.header__container {
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 0;
+  padding-bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header__nav, .header__logo, .header__contacts {
+  flex: 1;
+}
+.header__logo {
+  text-align: center;
+}
+.header__logo .logo {
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 20px;
+  max-width: 250px;
+}
+@media (max-width: 581px) {
+  .header__logo .logo {
+    font-size: 12px;
+  }
+}
+
+.nav__list {
+  display: flex;
+  gap: 15px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.nav__link {
+  color: black;
+  text-decoration: none;
+  font-size: 16px;
+}
+.nav__link:hover {
+  text-decoration: underline;
+}
+
+.menu-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav__burger__body {
+  position: absolute;
+  display: none;
+  top: 60px;
+  width: 100%;
+  background-color: white;
+}
+
+.nav__burger__body-active {
+  position: absolute;
+  display: block;
+  z-index: 5;
+  top: 60px;
+  width: 100%;
+  background-color: white;
+}
+
+.nav__burger__container {
+  height: 100%;
+  padding-top: 30px;
+}
+
+.nav__burger__container-list {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nav__burger-item {
+  height: 70px;
+}
+
+@media (max-width: 879px) {
+  .header {
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+  }
+  .header__container {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    height: 40px;
+  }
+  .nav__list {
+    display: none;
+  }
+  .header__contacts {
+    display: none;
+  }
+  .header__logo {
+    position: absolute;
+    left: 5px;
+  }
+  .nav__burger {
+    width: 30px;
+    background-color: white;
+  }
+  .nav__burger::before {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 4px;
+    background-color: black;
+    margin-bottom: 5px;
+  }
+  .nav__burger::after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 4px;
+    background-color: black;
+    margin-bottom: 5px;
+  }
+  .nav__burger .nav__burger-line {
+    display: block;
+    width: 30px;
+    height: 4px;
+    background-color: black;
+    margin-bottom: 5px;
+  }
+  .nav__burger-active {
+    background-color: white;
+  }
+  .nav__burger-active::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 30px;
+    height: 4px;
+    background-color: black;
+    transition: all ease-in 0.2s;
+    margin-bottom: 5px;
+    transform: rotate(-45deg);
+  }
+  .nav__burger-active::after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 4px;
+    background-color: black;
+    transition: all ease-in 0.2s;
+    margin-bottom: 5px;
+    transform: rotate(45deg);
+  }
+  .nav__burger-active .nav__burger-line {
+    display: block;
+    position: absolute;
+    opacity: 0;
+    width: 30px;
+    height: 4px;
+    background-color: black;
+    margin-bottom: 5px;
+  }
+}
+.contacts {
+  text-align: right;
+  float: right;
+}
+.contacts__phone, .contacts__email {
+  display: block;
+  color: #fff;
+  text-align: right;
+  text-decoration: none;
+  font-size: 16px;
+}
+.contacts__phone:hover, .contacts__email:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,223 @@
+.header {
+    background-color: white; 
+    padding: 15px 0;
+
+    &__container {
+        padding-left: 5px;
+        padding-right: 5px;
+        padding-top: 0;
+        padding-bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__nav, &__logo, &__contacts {
+        flex: 1; 
+    }
+
+    &__logo {
+        text-align: center;
+        
+        .logo {
+            color: black;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 20px;
+            max-width: 250px;
+            @media (max-width:$widthMobile) {
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+// Navigation
+.nav {
+    &__list {
+        display: flex;
+        gap: 15px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+
+    
+    &__link {
+        color: black;
+        text-decoration: none;
+        font-size: 16px;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+  
+
+
+}
+
+.menu-item{
+         display: inline-flex;
+        align-items: center;
+        gap: 6px; // расстояние между элементами
+        text-decoration: none;
+        color: inherit;
+    }
+
+
+.nav__burger__body{
+    position: absolute;
+    display: none;
+    top: 60px;
+    width: 100%;
+    background-color: $primary-color;
+}
+
+.nav__burger__body-active{
+    position: absolute;
+    display: block;
+    z-index: 5;
+    top: 60px;
+    width: 100%;
+    background-color: $primary-color;
+}
+
+.nav__burger__container{
+    height: 100%;
+    padding-top: 30px;
+}
+
+.nav__burger__container-list{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav__burger-item{
+    height: 70px;
+}
+
+@media (max-width: $widthTablet) {
+    .header{
+        position:fixed;
+        top:0;
+        z-index: 100;
+        width: 100%;
+    }
+    .header__container{
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        height: 40px;
+    }
+    .nav__list{
+        display: none;
+    }
+
+    
+
+
+
+    .header__contacts {
+        display: none;
+    }
+    
+    .header__logo{
+        position: absolute;
+        left: 5px;
+        
+    }
+    .nav__burger{
+        width: 30px;
+        background-color: $primary-color;
+        &::before{
+            content:"";
+            display: block;
+            width:30px;
+            height: 4px;
+            background-color: $burgerButtonColor;
+            margin-bottom:5px;
+        }
+        &::after{
+            content:"";
+            display: block;
+            width:30px;
+            height: 4px;
+            background-color: $burgerButtonColor;
+            margin-bottom:5px;
+        }
+    
+        .nav__burger-line{
+            display:block;
+            width: 30px;
+            height:4px;
+            background-color: $burgerButtonColor;
+            margin-bottom:5px;
+        }
+    }
+    
+    .nav__burger-active{
+        background-color: $primary-color;
+        &::before{
+            content:"";
+            display: block;
+            position: absolute;
+            width:30px;
+            height: 4px;
+            background-color: $burgerButtonColor;
+            transition: all ease-in 0.2s;
+            margin-bottom:5px;
+            transform: rotate(-45deg);
+        }
+        &::after{
+            content:"";
+            display: block;
+            width:30px;
+            height: 4px;
+            background-color: $burgerButtonColor;
+            transition: all ease-in 0.2s;
+            margin-bottom:5px;
+            transform: rotate(45deg);
+        }
+    
+        .nav__burger-line{
+            display:block;
+            position: absolute;
+            opacity: 0;
+            width: 30px;
+            height:4px;
+            background-color: $burgerButtonColor;
+            margin-bottom:5px;
+        }
+    }
+    
+   
+  }
+
+
+
+
+
+
+// Contacts
+.contacts {
+    text-align: right;
+    float:right;
+
+
+
+    &__phone, &__email {
+       
+        display: block;
+        color: #fff;
+        text-align: right;
+        text-decoration: none;
+        font-size: 16px;
+        
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
